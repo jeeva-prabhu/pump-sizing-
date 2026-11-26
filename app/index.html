@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101b2b">
-<title>Pump Hydraulics Engineering Suite | V5.1.2</title>
+<title>PumpSizer | Pump Hydraulics Engineering Suite</title>
 <meta name="description" content="Pump hydraulics engineering workspace with multi-segment SI calculation engine, configuration persistence, and interactive 3D hydraulic twin.">
 <script type="importmap">
 {
@@ -179,7 +179,7 @@ main{max-width:1700px;margin:0 auto;padding:24px 28px 44px}
       <h1>Pump Hydraulics Engineering Suite</h1>
     </div>
   </div>
-  <div class="version">V5.1.2 · Deployment Stabilization</div>
+  <div class="version">V5.2 UI · Engineering workspace</div>
 </header>
 <div class="app-shell">
   <aside class="sidebar" aria-label="Application navigation">
@@ -190,20 +190,19 @@ main{max-width:1700px;margin:0 auto;padding:24px 28px 44px}
     <a class="nav-item" href="#viewportShell"><span class="nav-icon">◇</span><span>3D hydraulic model</span></a>
     <div class="sidebar-divider"></div>
     <div class="sidebar-caption">ENGINEERING</div>
-    <div class="sidebar-note"><span class="status-dot"></span> Calculation engine ready</div>
-    <div class="sidebar-note muted-note">SI units · Steady-state model</div>
+    <div class="sidebar-note"><span class="status-dot"></span> Calculation module loaded</div>
+    <div class="sidebar-note muted-note">SI units · Single-line model</div>
     <div class="sidebar-footer">PUMPSIZER<br><span>PROCESS ENGINEERING TOOLS</span></div>
   </aside>
   <div class="workspace"><main>
   <div class="intro">
-    <div class="eyebrow">Hydraulic module / 02</div>
+    <div class="eyebrow">HYDRAULIC MODULE / 02</div>
     <h2>Multi-segment pipe system assessment</h2>
     <p>Model a serial suction/discharge path with different pipe diameters, lengths, roughness, fitting losses, equipment pressure drops and elevation changes. All calculations are performed internally in SI units.</p>
   </div>
   <div class="layout">
     <section class="panel" id="setup-panel">
-      <h3>System design basis</h3>
-      </div><span class="panel-step">01 / INPUTS</span></div><p class="sub">Enter common fluid conditions, then define each pipe reach in flow order.</p>
+      <div class="panel-heading"><div><div class="panel-kicker">INPUT DEFINITION</div><h3>System design basis</h3></div><span class="panel-step">01 / INPUTS</span></div><p class="sub">Enter common fluid conditions, then define each pipe reach in flow order.</p>
       <form id="form">
         <div class="section">Common operating conditions</div>
         <div class="fields">
@@ -232,8 +231,7 @@ main{max-width:1700px;margin:0 auto;padding:24px 28px 44px}
     </section>
 
     <section class="panel" id="results-panel">
-      <h3>System calculation results</h3>
-      </div><span class="panel-step">02 / OUTPUTS</span></div><p class="sub">Darcy–Weisbach + Churchill (1977) · interactive 3D pipe assembly &amp; segment hydraulic profile</p>
+      <div class="panel-heading"><div><div class="panel-kicker">HYDRAULIC ANALYSIS</div><h3>System calculation results</h3></div><span class="panel-step">02 / OUTPUTS</span></div><p class="sub">Darcy–Weisbach + Churchill (1977) · interactive 3D pipe assembly &amp; segment hydraulic profile</p>
 
       <div id="viewportShell" class="viewport-shell">
         <div id="scene3dMount" class="viewport-canvas" data-testid="scene3d-mount"></div>
