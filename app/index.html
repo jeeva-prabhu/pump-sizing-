@@ -201,7 +201,7 @@ main{max-width:1700px;margin:0 auto;padding:24px 28px 44px}
     <p>Model a serial suction/discharge path with different pipe diameters, lengths, roughness, fitting losses, equipment pressure drops and elevation changes. All calculations are performed internally in SI units.</p>
   </div>
   <div class="layout">
-    <section class="panel">
+    <section class="panel" id="setup-panel">
       <h3>System design basis</h3>
       </div><span class="panel-step">01 / INPUTS</span></div><p class="sub">Enter common fluid conditions, then define each pipe reach in flow order.</p>
       <form id="form">
@@ -231,7 +231,7 @@ main{max-width:1700px;margin:0 auto;padding:24px 28px 44px}
       </form>
     </section>
 
-    <section class="panel">
+    <section class="panel" id="results-panel">
       <h3>System calculation results</h3>
       </div><span class="panel-step">02 / OUTPUTS</span></div><p class="sub">Darcy–Weisbach + Churchill (1977) · interactive 3D pipe assembly &amp; segment hydraulic profile</p>
 
@@ -302,7 +302,7 @@ main{max-width:1700px;margin:0 auto;padding:24px 28px 44px}
       <p class="foot">Model scope: steady, incompressible, single-phase Newtonian liquid in one serial flow path. No branches, pump curve, control-valve flow characteristic, transient surge or network balancing. Equipment pressure drops are fixed user inputs. Verify all data and project design criteria independently.</p>
     </section>
   </div>
-</main>
+</main></div></div>
 
 <script src="./hydraulics-v5.js"></script>
 <script src="./hydraulics-v5-1.js"></script>
