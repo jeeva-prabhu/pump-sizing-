@@ -95,6 +95,79 @@ main{max-width:1500px;margin:auto;padding:26px clamp(16px,4vw,56px) 60px}
 
 @media(max-width:900px){.layout{grid-template-columns:1fr}}
 @media(max-width:560px){.fields{grid-template-columns:1fr}.results{grid-template-columns:1fr 1fr}.panel{padding:15px}.intro h2{font-size:21px}.viewport-shell{height:300px}.dock-sep{display:none}}
+
+/* V5.2 professional engineering workspace theme */
+:root{color-scheme:light;--bg:#f2f5f8;--panel:#ffffff;--line:#dce4eb;--text:#172b40;--muted:#64778a;--accent:#087f83;--good:#16865f;--warn:#a96c16;--bad:#c34242}
+body{background:var(--bg);color:var(--text);font:13px/1.48 Inter,"Segoe UI",Arial,sans-serif}
+header{height:72px;padding:0 28px;background:#14263d;border-bottom:1px solid #233c56;color:#f4f8fb;position:relative;z-index:2}
+.mark{width:38px;height:38px;border-radius:9px;background:#0f8b8d;color:#fff;font-size:17px}
+.eyebrow{color:#8ed5d2;font-size:9px;letter-spacing:.15em}
+.brand h1{font-size:16px;font-weight:650;letter-spacing:.01em}
+.version{border:1px solid #3b566f;border-radius:6px;padding:5px 10px;color:#c3d7e7;font-size:11px;background:#1b324a}
+.app-shell{display:grid;grid-template-columns:224px minmax(0,1fr);min-height:calc(100vh - 72px)}
+.sidebar{background:#182d44;color:#c5d3df;padding:22px 13px;display:flex;flex-direction:column;min-height:calc(100vh - 72px);position:sticky;top:0;height:calc(100vh - 72px)}
+.sidebar-caption{font-size:9px;letter-spacing:.15em;font-weight:800;color:#7892aa;padding:8px 12px 10px}
+.nav-item{display:flex;align-items:center;gap:11px;color:#c5d3df;text-decoration:none;font-size:12px;font-weight:550;padding:10px 12px;border-radius:6px;margin:2px 0;border:1px solid transparent}
+.nav-item:hover{background:#213d58;color:#fff}
+.nav-item.active{background:#21475e;color:#fff;border-color:#2f6177;box-shadow:inset 3px 0 #28b2ad}
+.nav-icon{width:18px;text-align:center;color:#8fcac8;font-size:15px}
+.sidebar-divider{height:1px;background:#2b435a;margin:18px 8px 10px}
+.sidebar-note{font-size:11px;color:#b8cad8;padding:6px 12px}
+.status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#38bd88;margin-right:7px;box-shadow:0 0 0 3px #38bd8822}
+.muted-note{color:#8198ac;font-size:10px}
+.sidebar-footer{margin-top:auto;padding:16px 12px 5px;border-top:1px solid #2b435a;color:#dce8f1;font-size:10px;font-weight:800;letter-spacing:.14em}
+.sidebar-footer span{font-size:8px;color:#7892aa;font-weight:600}
+.workspace{min-width:0}
+main{max-width:1700px;margin:0 auto;padding:24px 28px 44px}
+.intro{margin-bottom:18px}
+.intro .eyebrow{color:#0b8588}
+.intro h2{font-size:22px;letter-spacing:-.025em;margin:3px 0 5px;color:#172b40}
+.intro p{color:#64778a;font-size:12px;max-width:980px}
+.layout{grid-template-columns:minmax(330px,.88fr) minmax(460px,1.12fr);gap:15px}
+.panel{background:#fff;border:1px solid #dce4eb;border-radius:9px;padding:18px;box-shadow:0 2px 8px #152a3d0a}
+.panel-heading{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.panel h3{font-size:15px;color:#1a3046;font-weight:700;margin:1px 0 0}
+.panel-kicker{font-size:9px;letter-spacing:.14em;color:#0c8587;font-weight:800}
+.panel-step{font-size:9px;letter-spacing:.1em;color:#74879a;font-weight:800;border:1px solid #dfe7ed;border-radius:4px;padding:5px 7px;white-space:nowrap}
+.sub{color:#708194;font-size:11px;margin:7px 0 13px}
+.section{font-size:10px;color:#0c777b;letter-spacing:.1em;margin:17px 0 9px;padding-bottom:6px;border-bottom:1px solid #e7edf1}
+.fields{gap:10px}
+.field label{color:#4e6275;font-size:11px;font-weight:600;margin-bottom:5px}
+.field input,.field select{background:#fbfcfd;color:#20364b;border:1px solid #ccd7e0;border-radius:5px;padding:8px 9px;font-size:12px;min-height:35px}
+.field input:focus,.field select:focus{border-color:#0c898b;box-shadow:0 0 0 3px #0c898b18}
+.field small{color:#8393a2}
+.actions{gap:7px;margin-top:15px}
+.btn{border-radius:5px;padding:8px 11px;font-size:11px;font-weight:650}
+.primary{background:#087f83;border-color:#087f83;color:#fff}
+.primary:hover:not(:disabled){background:#066d70}
+.secondary{background:#f3f6f8;color:#41576a;border-color:#d5dfe7}
+.secondary:hover:not(:disabled){border-color:#0b8588;color:#087f83;background:#f5fbfb}
+.restore{background:#e9f4f4;color:#08777a;border-color:#b9dedd}
+.danger{background:#fff4f3;color:#b13f3b;border-color:#efcfcc}
+.segment{border:1px solid #dce5eb;border-radius:7px;padding:11px;background:#f8fafb;margin:9px 0}
+.segmenthead{margin-bottom:8px}
+.segmenthead strong{color:#26445d;font-size:12px}
+.storage-status{color:#668092;font-size:10px}
+.results{gap:8px;margin-top:12px}
+.metric{padding:11px;background:#f7f9fb;border:1px solid #e0e7ed;border-radius:7px}
+.metric span{color:#64778a;font-size:10px}
+.metric strong{font-size:19px;color:#19344b;font-weight:700;font-variant-numeric:tabular-nums}
+.metric em{color:#7b8d9d;font-size:9px}
+.details{border:1px solid #dce4eb;border-radius:7px;margin-top:13px}
+.details h4{background:#f2f6f8;color:#344e64;font-size:11px;padding:10px 12px}
+.details table{font-size:10px}
+.details th,.details td{padding:8px 9px;border-top:1px solid #e6edf1}
+.details th{color:#526c80;background:#f8fafb}
+.details tbody tr:hover{background:#f0f8f8}
+.details tbody tr.selected-row{background:#e3f3f2}
+.notice{background:#fff8e9;border:1px solid #ead5a9;color:#77551c;border-radius:6px}
+.error{color:#b13f3b}
+.foot{color:#788b9c;font-size:10px}
+.viewport-shell{border:1px solid #cad7e1;border-radius:8px;margin-bottom:12px;background:#101b2b}
+.viewport-badge{background:#14263deF;border:1px solid #3b5872;border-radius:6px}
+.dock{border-radius:7px}
+@media(max-width:1100px){.app-shell{grid-template-columns:190px minmax(0,1fr)}main{padding:20px 18px}.layout{grid-template-columns:1fr}}
+@media(max-width:700px){.app-shell{display:block}.sidebar{position:relative;height:auto;min-height:0;display:flex;flex-direction:row;flex-wrap:wrap;gap:4px;padding:8px}.sidebar-caption,.sidebar-divider,.sidebar-note,.sidebar-footer{display:none}.nav-item{font-size:10px;padding:8px}.nav-icon{display:none}header{padding:0 15px;height:auto;min-height:68px}.brand h1{font-size:13px}.version{font-size:9px}main{padding:17px 12px 32px}}
 </style>
 </head>
 <body>
@@ -108,7 +181,20 @@ main{max-width:1500px;margin:auto;padding:26px clamp(16px,4vw,56px) 60px}
   </div>
   <div class="version">V5.1.2 · Deployment Stabilization</div>
 </header>
-<main>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Application navigation">
+    <div class="sidebar-caption">WORKSPACE</div>
+    <a class="nav-item active" href="#setup-panel"><span class="nav-icon">⌘</span><span>System setup</span></a>
+    <a class="nav-item" href="#segments"><span class="nav-icon">⇄</span><span>Pipe segments</span></a>
+    <a class="nav-item" href="#results-panel"><span class="nav-icon">▤</span><span>Results &amp; analysis</span></a>
+    <a class="nav-item" href="#viewportShell"><span class="nav-icon">◇</span><span>3D hydraulic model</span></a>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-caption">ENGINEERING</div>
+    <div class="sidebar-note"><span class="status-dot"></span> Calculation engine ready</div>
+    <div class="sidebar-note muted-note">SI units · Steady-state model</div>
+    <div class="sidebar-footer">PUMPSIZER<br><span>PROCESS ENGINEERING TOOLS</span></div>
+  </aside>
+  <div class="workspace"><main>
   <div class="intro">
     <div class="eyebrow">Hydraulic module / 02</div>
     <h2>Multi-segment pipe system assessment</h2>
@@ -117,7 +203,7 @@ main{max-width:1500px;margin:auto;padding:26px clamp(16px,4vw,56px) 60px}
   <div class="layout">
     <section class="panel">
       <h3>System design basis</h3>
-      <p class="sub">Enter common fluid conditions, then define each pipe reach in flow order.</p>
+      </div><span class="panel-step">01 / INPUTS</span></div><p class="sub">Enter common fluid conditions, then define each pipe reach in flow order.</p>
       <form id="form">
         <div class="section">Common operating conditions</div>
         <div class="fields">
@@ -147,7 +233,7 @@ main{max-width:1500px;margin:auto;padding:26px clamp(16px,4vw,56px) 60px}
 
     <section class="panel">
       <h3>System calculation results</h3>
-      <p class="sub">Darcy–Weisbach + Churchill (1977) · interactive 3D pipe assembly &amp; segment hydraulic profile</p>
+      </div><span class="panel-step">02 / OUTPUTS</span></div><p class="sub">Darcy–Weisbach + Churchill (1977) · interactive 3D pipe assembly &amp; segment hydraulic profile</p>
 
       <div id="viewportShell" class="viewport-shell">
         <div id="scene3dMount" class="viewport-canvas" data-testid="scene3d-mount"></div>
