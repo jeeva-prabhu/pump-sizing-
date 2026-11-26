@@ -1,7 +1,7 @@
 {
   "name": "pump-hydraulics-engineering-suite",
-  "version": "5.1.2",
-  "description": "Pump hydraulics engineering suite with hardened single-line and multi-segment SI calculation engines",
+  "version": "5.2.0",
+  "description": "Pump hydraulics engineering suite with professional engineering workspace and multi-segment SI calculation engine",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -13,16 +13,45 @@
     "test:storage": "node --test tests/storage-config.test.js",
     "test:layout3d": "node --test tests/pipe-layout-3d.test.js",
     "test:deployment": "node --test tests/deployment-config.test.js",
-    "test": "npm run test:v5 && npm run test:v5.1 && npm run test:storage && npm run test:layout3d && npm run test:deployment"
+    "test": "npm run test:v5 && npm run test:v5.1 && npm run test:storage && npm run test:layout3d && npm run test:deployment && npm run test:ui",
+    "test:ui": "node --test tests/ui-theme.test.js"
   },
-  "dependencies": { "express": "^5.3.0", "three": "^0.187.0" },
+  "dependencies": {
+    "express": "^5.3.0",
+    "three": "^0.187.0"
+  },
   "build": {
     "appId": "com.just.pumphydraulics",
     "productName": "Pump Hydraulics Engineering Suite",
-    "directories": { "buildResources": "build" },
-    "files": ["main.js", "preload.js", "src/**/*", "app/**/*", "package.json"],
-    "win": { "target": [{ "target": "nsis", "arch": ["x64"] }] },
-    "mac": { "target": ["dmg"] },
-    "linux": { "target": ["AppImage"] }
+    "directories": {
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "app/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    }
   }
 }
