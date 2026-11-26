@@ -1,33 +1,26 @@
-# V5.1.1 Release Status
+# V5.1.2 Release Status
 
-**Release:** V5.1.1 Engineering Verification and Input Hardening  
-**Merged:** 25 November 2026  
-**Pull request:** #1  
-**Merge commit:** d8e4c85d1c93601b04c485d140e8789b50fa136e
+**Release:** V5.1.2 deployment-path stabilization  
+**Branch:** `fix/v5.1.2-deployment-stabilization`
 
-## Completed
+## Changes in this branch
+- Replaced Express-only absolute Three.js vendor paths with version-pinned jsDelivr module URLs. The import map can resolve in Vercel static hosting and Electron `file://` mode.
+- Added syntax validation for the 3D ES module to build and lint scripts.
+- Added automated configuration checks for the Three.js import map, Vercel output directory, and module entry point.
+- Updated deployment documentation to state the CDN network dependency and remaining desktop packaging work.
 
-- Source and destination absolute-pressure boundary contribution is included in required pump head when both boundary pressures are provided.
-- Absolute-pressure validity and optional liquid vapour-pressure screening are implemented.
-- Blank numeric inputs, non-decimal numeric strings and missing dimensional units are rejected.
-- Omitted inlet reference diameter is explicitly warned because the first-segment velocity-head change cannot otherwise be determined.
-- Separate configurable suction and discharge velocity screening limits are available.
-- Negative net head and negative hydraulic power are flagged.
-- Fixed equipment pressure drops are rejected at zero flow.
-- Source and browser calculation engines are synchronized and regression-tested for drift.
-- Regression coverage includes laminar friction, turbulent Churchill/Colebrook comparison, transitional warning, a two-segment worked example, pressure boundaries and edge-case validation.
-- Stale Churchill/Swamee–Jain documentation, V5.0 About label, roadmap scope and broken curve test script were corrected.
-- Full `npm test` passed in GitHub Actions run #34 before merge.
+## Verification required
+- Run `npm install`, `npm test`, and `npm run build` on Node.js 20.
+- Deploy a Vercel preview and verify browser console, default calculation, boundary-pressure case, and 3D viewport.
+- Test Electron only after adding and locking the Electron toolchain. The repository still lacks Electron/electron-builder dependencies and scripts.
+- Test offline desktop only after Three.js is vendored locally.
 
 ## Outstanding release administration
-
-1. **Software license:** No license file has been added. The repository owner must choose the intended license after considering ownership and distribution terms. No license has been selected on the owner's behalf.
-2. **Dependency lockfile:** `package-lock.json` is not present. Generate and commit it using the project's chosen Node/npm version before relying on reproducible Electron packaging or `npm ci`.
-3. **Deployment smoke test:** Vercel output is configured as `app`, but a live deployment was not independently verified as part of this code change. Confirm the Vercel deployment URL, load the app, and run the default and boundary-pressure cases.
-4. **Engineering sign-off:** Validate project-specific velocity criteria, pipe internal diameters, fitting K values, fluid vapour pressure, and equipment pressure-drop data. The application remains a preliminary engineering aid.
+1. **Dependency lockfile:** `package-lock.json` remains outstanding. Generate it with the selected Node/npm toolchain before relying on reproducible installs.
+2. **Software license:** No license has been selected or added. Repository owner decision required.
+3. **Electron packaging:** `main.js`/`preload.js` exist, but Electron and electron-builder are not declared and packaging scripts are absent.
+4. **Live deployment:** No live Vercel deployment has been tested by this change.
+5. **Engineering sign-off:** Validate project-specific design criteria, source data, fluid properties, pump performance and NPSH before engineering use.
 
 ## Model limitations
-
-V5.1.1 is a steady, incompressible, single-phase, Newtonian-liquid model for one serial flow path. It is not a branched network solver. Pump curves, pump operating points, NPSHa/NPSHr calculations, detailed cavitation, water hammer, transient analysis and certified API/ANSI-HI compliance are not implemented.
-
-The calculated passive pressure profile does not assume a pump location. The pressure-boundary contribution affects required pump head separately.
+The hydraulic engine remains a steady, incompressible, single-phase Newtonian-liquid model for one serial flow path. It is not a branched network solver. Pump curves, operating points, NPSHa/NPSHr, detailed cavitation, water hammer, transient analysis and certified API/ANSI-HI compliance are not implemented.
